@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Common/Scenes/GamePlayScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Materials/PlankMat.tres" type="Material" id=2]
@@ -6,8 +6,47 @@
 [ext_resource path="res://Assets/Materials/BrickMat.tres" type="Material" id=4]
 [ext_resource path="res://Assets/Materials/KitchenWalls.tres" type="Material" id=5]
 [ext_resource path="res://Assets/Materials/GrassFloor.tres" type="Material" id=6]
+[ext_resource path="res://Common/Scenes/UIManager.gd" type="Script" id=7]
+[ext_resource path="res://Common/Res/deafultTheme.tres" type="Theme" id=8]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/Stove.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/Plant.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/Fridge.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/ButcherBlock.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/Can.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/Sink.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Common/Scenes/Gameplay/UI/Inventory.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Common/Scenes/Gameplay/UI/HandInventory.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/Storage.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Textures/rug.png" type="Texture" id=18]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/SlotMachine.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Common/Scenes/Gameplay/Decoration/Chair.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Materials/BarWallpaper.tres" type="Material" id=21]
+[ext_resource path="res://Assets/Materials/SlotRoomWallpaperMat.tres" type="Material" id=22]
+[ext_resource path="res://Assets/Textures/barTop.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Models/ash_tray.obj" type="ArrayMesh" id=24]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/Radio.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/Textures/welcommapt.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Textures/Fence.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Textures/DrinkWall.png" type="Texture" id=28]
+[ext_resource path="res://Common/Scenes/Gameplay/Interactables/Still.tscn" type="PackedScene" id=29]
 
-[sub_resource type="PlaneMesh" id=5]
+[sub_resource type="PlaneMesh" id=23]
+size = Vector2( 10, 2 )
+
+[sub_resource type="SpatialMaterial" id=24]
+albedo_texture = ExtResource( 27 )
+uv1_scale = Vector3( 2, 1, 1 )
+
+[sub_resource type="PlaneMesh" id=7]
+size = Vector2( 10, 10 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 5, 0.03, 5 )
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 10, 10 )
+
+[sub_resource type="PlaneMesh" id=2]
 size = Vector2( 10, 5 )
 
 [sub_resource type="PlaneMesh" id=3]
@@ -16,23 +55,43 @@ size = Vector2( 10, 5 )
 [sub_resource type="PlaneMesh" id=4]
 size = Vector2( 10, 5 )
 
-[sub_resource type="PlaneMesh" id=7]
-size = Vector2( 10, 10 )
-
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 10, 10 )
-
-[sub_resource type="PlaneMesh" id=2]
-size = Vector2( 10, 5 )
-
 [sub_resource type="PlaneMesh" id=8]
 size = Vector2( 10, 10 )
 
-[sub_resource type="CubeMesh" id=10]
-size = Vector3( 1.5, 1.5, 1.5 )
+[sub_resource type="QuadMesh" id=13]
+size = Vector2( 5, 2 )
 
-[sub_resource type="BoxShape" id=11]
-extents = Vector3( 0.75, 0.75, 0.75 )
+[sub_resource type="SpatialMaterial" id=14]
+albedo_texture = ExtResource( 18 )
+uv1_scale = Vector3( 2, 2, 1 )
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_transparent = true
+params_diffuse_mode = 4
+albedo_color = Color( 1, 1, 1, 0.164706 )
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.63
+
+[sub_resource type="PlaneMesh" id=25]
+size = Vector2( 5, 2 )
+
+[sub_resource type="SpatialMaterial" id=26]
+albedo_texture = ExtResource( 28 )
+
+[sub_resource type="PlaneMesh" id=15]
+size = Vector2( 10, 2 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_texture = ExtResource( 23 )
+
+[sub_resource type="PlaneMesh" id=20]
+size = Vector2( 10, 0.5 )
+
+[sub_resource type="QuadMesh" id=18]
+size = Vector2( 2, 1 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_texture = ExtResource( 26 )
 
 [sub_resource type="PlaneMesh" id=6]
 size = Vector2( 10, 5 )
@@ -40,10 +99,20 @@ size = Vector2( 10, 5 )
 [sub_resource type="PlaneMesh" id=9]
 size = Vector2( 10, 10 )
 
+[sub_resource type="ProceduralSky" id=21]
+ground_horizon_color = Color( 0.839216, 0.917647, 0.980392, 1 )
+
+[sub_resource type="Environment" id=22]
+background_mode = 2
+background_sky = SubResource( 21 )
+
 [node name="GamePlayScene" type="Node"]
 script = ExtResource( 1 )
-valid_rooms = [ Vector2( 0, 0 ), Vector2( 0, 1 ), Vector2( 0, -1 ) ]
+valid_rooms = [ Vector2( 0, 0 ), Vector2( 0, 1 ), Vector2( -1, 0 ), Vector2( 0, -1 ), Vector2( 1, 0 ) ]
 step = Vector2( 10.25, 5.25 )
+
+[node name="MinuteTimer" type="Timer" parent="."]
+autostart = true
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
@@ -52,31 +121,110 @@ fov = 60.0
 [node name="Garden" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 0 )
 
-[node name="BackWall" type="CSGMesh" parent="Garden"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -5 )
-mesh = SubResource( 5 )
+[node name="Fence" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, -13 )
+mesh = SubResource( 23 )
+material = SubResource( 24 )
 
-[node name="LeftWall" type="CSGMesh" parent="Garden"]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5, 2.5, 0 )
-mesh = SubResource( 3 )
+[node name="Fence6" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 10, 1, -13 )
+mesh = SubResource( 23 )
+material = SubResource( 24 )
 
-[node name="RightWall" type="CSGMesh" parent="Garden"]
-transform = Transform( 2.98023e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 2.98023e-08, -1.77636e-15, 5, 2.5, 0 )
-mesh = SubResource( 4 )
+[node name="Fence2" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -10, 1, -13 )
+mesh = SubResource( 23 )
+material = SubResource( 24 )
+
+[node name="Fence3" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -10, 1, -13 )
+mesh = SubResource( 23 )
+material = SubResource( 24 )
 
 [node name="Floor" type="CSGMesh" parent="Garden"]
 mesh = SubResource( 7 )
 material = ExtResource( 6 )
 
+[node name="Body" type="StaticBody" parent="Garden/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Garden/Floor/Body"]
+shape = SubResource( 12 )
+
+[node name="Floor2" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
+mesh = SubResource( 7 )
+material = ExtResource( 6 )
+
+[node name="Floor3" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
+mesh = SubResource( 7 )
+material = ExtResource( 6 )
+
+[node name="Floor4" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
+mesh = SubResource( 7 )
+material = ExtResource( 6 )
+
+[node name="Floor5" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10 )
+mesh = SubResource( 7 )
+material = ExtResource( 6 )
+
+[node name="Fence4" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -20, 1, -13 )
+mesh = SubResource( 23 )
+material = SubResource( 24 )
+
+[node name="Floor7" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -10 )
+mesh = SubResource( 7 )
+material = ExtResource( 6 )
+
+[node name="Fence5" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 20, 1, -13 )
+mesh = SubResource( 23 )
+material = SubResource( 24 )
+
+[node name="Floor8" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10 )
+mesh = SubResource( 7 )
+material = ExtResource( 6 )
+
+[node name="Floor6" type="CSGMesh" parent="Garden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10 )
+mesh = SubResource( 7 )
+material = ExtResource( 6 )
+
 [node name="Ceilning" type="CSGMesh" parent="Garden"]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, 0 )
+visible = false
 mesh = SubResource( 1 )
+
+[node name="Plant1" parent="Garden" instance=ExtResource( 10 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -4, 0.0255094, 2.5 )
+visible = false
+
+[node name="Plant2" parent="Garden" instance=ExtResource( 10 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2, 0.0255094, 0.5 )
+
+[node name="Plant3" parent="Garden" instance=ExtResource( 10 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.0255094, -1.5 )
+
+[node name="Plant4" parent="Garden" instance=ExtResource( 10 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 2, 0.0255094, 0.5 )
+
+[node name="Plant5" parent="Garden" instance=ExtResource( 10 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 4, 0.0255094, 2.5 )
+visible = false
+
+[node name="Can" parent="Garden" instance=ExtResource( 13 )]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0, 0.026509, 2.33012 )
 
 [node name="Kitchen" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
 
 [node name="BackWall" type="CSGMesh" parent="Kitchen"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -5 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, 0 )
 mesh = SubResource( 2 )
 material = ExtResource( 5 )
 
@@ -94,24 +242,48 @@ material = ExtResource( 5 )
 mesh = SubResource( 8 )
 material = ExtResource( 3 )
 
+[node name="Body" type="StaticBody" parent="Kitchen/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Floor/Body"]
+shape = SubResource( 12 )
+
 [node name="Ceilning" type="CSGMesh" parent="Kitchen"]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, 0 )
 mesh = SubResource( 1 )
+material = ExtResource( 5 )
+
+[node name="Stove" parent="Kitchen" instance=ExtResource( 9 )]
+transform = Transform( 0.7, 0, 0, 0, 0.58, 0, 0, 0, 0.7, 0.146277, 0.235544, 1.5 )
+
+[node name="Fridge" parent="Kitchen" instance=ExtResource( 11 )]
+transform = Transform( 0.8, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 3.84318, 0.178896, 1 )
+interactable_name = "Fridge"
+mouse_over_text = "Inventory"
+
+[node name="CuttingBlock" parent="Kitchen" instance=ExtResource( 12 )]
+transform = Transform( 0.8, 0, 0, 0, 0.75, 0, 0, 0, 0.8, -1.73263, 0.153497, 1.3689 )
+
+[node name="Sink" parent="Kitchen" instance=ExtResource( 14 )]
+transform = Transform( 0.85, 0, 0, 0, 0.7, 0, 0, 0, 0.85, -3.62761, 0.157019, 1.33827 )
+
+[node name="Storage" parent="Kitchen" instance=ExtResource( 17 )]
+transform = Transform( 0.8, 0, 0, 0, 0.75, 0, 0, 0, 0.8, 1.99544, 0.173811, 1.338 )
+interactable_name = "Storage"
+mouse_over_text = "Inventory"
 
 [node name="CSGMesh" type="CSGMesh" parent="Kitchen"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 2.5 )
-mesh = SubResource( 10 )
-
-[node name="Area" type="Area" parent="Kitchen/CSGMesh"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Kitchen/CSGMesh/Area"]
-shape = SubResource( 11 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.00100005, 3.95978 )
+mesh = SubResource( 13 )
+material = SubResource( 14 )
 
 [node name="Distillery" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.25, -2, 0 )
 
+[node name="Still" parent="Distillery" instance=ExtResource( 29 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -2.25005, 1.96706, 1.40168 )
+
 [node name="BackWall" type="CSGMesh" parent="Distillery"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -5 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -1 )
 mesh = SubResource( 2 )
 material = ExtResource( 4 )
 
@@ -129,31 +301,207 @@ material = ExtResource( 4 )
 mesh = SubResource( 1 )
 material = ExtResource( 2 )
 
+[node name="Body" type="StaticBody" parent="Distillery/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Distillery/Floor/Body"]
+shape = SubResource( 12 )
+
 [node name="Ceilning" type="CSGMesh" parent="Distillery"]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, 0 )
 mesh = SubResource( 1 )
+material = ExtResource( 4 )
 
 [node name="Bar" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.25, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -7.25, 0 )
+
+[node name="ash_tray" type="MeshInstance" parent="Bar"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.87249, 2.08125, 0.908406 )
+mesh = ExtResource( 24 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 17 )
 
 [node name="BackWall" type="CSGMesh" parent="Bar"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -5 )
-mesh = SubResource( 6 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -1 )
+mesh = SubResource( 2 )
+material = ExtResource( 21 )
+
+[node name="Drinks" type="CSGMesh" parent="Bar"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.50826, 3.5, -0.278874 )
+visible = false
+mesh = SubResource( 25 )
+material = SubResource( 26 )
 
 [node name="LeftWall" type="CSGMesh" parent="Bar"]
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5, 2.5, 0 )
 mesh = SubResource( 3 )
+material = ExtResource( 21 )
 
 [node name="RightWall" type="CSGMesh" parent="Bar"]
 transform = Transform( 2.98023e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 2.98023e-08, -1.77636e-15, 5, 2.5, 0 )
 mesh = SubResource( 4 )
+material = ExtResource( 21 )
 
 [node name="Floor" type="CSGMesh" parent="Bar"]
-mesh = SubResource( 9 )
+mesh = SubResource( 1 )
 material = ExtResource( 2 )
+
+[node name="Body" type="StaticBody" parent="Bar/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Bar/Floor/Body"]
+shape = SubResource( 12 )
 
 [node name="Ceilning" type="CSGMesh" parent="Bar"]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, 0 )
 mesh = SubResource( 1 )
+material = ExtResource( 21 )
 
-[connection signal="input_event" from="Kitchen/CSGMesh/Area" to="." method="_on_Stove_input_event"]
+[node name="Chair" parent="Bar" instance=ExtResource( 20 )]
+transform = Transform( 0.55, 0, 0, 0, 0.35, 0, 0, 0, 0.55, -4.11079, 0.0339189, 2.62501 )
+
+[node name="Chair2" parent="Bar" instance=ExtResource( 20 )]
+transform = Transform( 0.55, 0, 0, 0, 0.35, 0, 0, 0, 0.55, -2.11079, 0.0339189, 2.62501 )
+
+[node name="Chair3" parent="Bar" instance=ExtResource( 20 )]
+transform = Transform( 0.55, 0, 0, 0, 0.35, 0, 0, 0, 0.55, -0.11079, 0.0339189, 2.62501 )
+
+[node name="Chair4" parent="Bar" instance=ExtResource( 20 )]
+transform = Transform( 0.55, 0, 0, 0, 0.35, 0, 0, 0, 0.55, 1.88921, 0.0339189, 2.62501 )
+
+[node name="Chair5" parent="Bar" instance=ExtResource( 20 )]
+transform = Transform( 0.55, 0, 0, 0, 0.35, 0, 0, 0, 0.55, 3.88921, 0.0339189, 2.62501 )
+
+[node name="BarWall" type="CSGMesh" parent="Bar"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.05992, 0.916971 )
+mesh = SubResource( 15 )
+material = SubResource( 16 )
+
+[node name="BarTop" type="CSGMesh" parent="Bar"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05992, 0.693458 )
+mesh = SubResource( 15 )
+material = SubResource( 16 )
+
+[node name="BarTop2" type="CSGMesh" parent="Bar"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.81552, 1.69346 )
+mesh = SubResource( 20 )
+material = SubResource( 16 )
+
+[node name="WelcomeMat" type="CSGMesh" parent="Bar"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.021502, 4.20671 )
+mesh = SubResource( 18 )
+material = SubResource( 19 )
+
+[node name="SlotRoom" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.25, -2, 0 )
+
+[node name="BackWall" type="CSGMesh" parent="SlotRoom"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, 0 )
+mesh = SubResource( 6 )
+material = ExtResource( 22 )
+
+[node name="LeftWall" type="CSGMesh" parent="SlotRoom"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5, 2.5, 0 )
+mesh = SubResource( 3 )
+material = ExtResource( 22 )
+
+[node name="RightWall" type="CSGMesh" parent="SlotRoom"]
+transform = Transform( 2.98023e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 2.98023e-08, -1.77636e-15, 5, 2.5, 0 )
+mesh = SubResource( 4 )
+material = ExtResource( 22 )
+
+[node name="Floor" type="CSGMesh" parent="SlotRoom"]
+mesh = SubResource( 9 )
+material = ExtResource( 2 )
+
+[node name="Body" type="StaticBody" parent="SlotRoom/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SlotRoom/Floor/Body"]
+shape = SubResource( 12 )
+
+[node name="Ceilning" type="CSGMesh" parent="SlotRoom"]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, 0 )
+mesh = SubResource( 1 )
+material = ExtResource( 22 )
+
+[node name="SlotMachine" parent="SlotRoom" instance=ExtResource( 19 )]
+transform = Transform( 0.851132, 0, 0.524952, 0, 1.2, 0, -0.524952, 0, 0.851132, -2.40309, 1.97246, 2.05751 )
+
+[node name="Chair" parent="SlotRoom" instance=ExtResource( 20 )]
+transform = Transform( 0.442498, 0, -0.326643, 0, 0.45, 0, 0.326643, 0, 0.442498, 3.3258, 0, 1.65002 )
+
+[node name="Radio" parent="SlotRoom" instance=ExtResource( 25 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.31981, 2.01856, 1.75723 )
+interactable_name = "Radio"
+mouse_over_text = "Mute Music"
+
+[node name="OmniLight" type="OmniLight" parent="SlotRoom"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15041, 3.03858 )
+shadow_enabled = true
+omni_range = 5.68465
+
+[node name="OmniLight2" type="OmniLight" parent="SlotRoom"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2101, 4.25041, 2.34667 )
+shadow_enabled = true
+omni_range = 5.68465
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 7 )
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 8 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UI"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+
+[node name="CC" type="CenterContainer" parent="CanvasLayer/UI/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Time" type="Label" parent="CanvasLayer/UI/Panel/CC"]
+margin_left = 112.0
+margin_top = 29.0
+margin_right = 187.0
+margin_bottom = 70.0
+text = "Day: 1"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CanvasLayer/UI/CenterContainer"]
+visible = false
+modulate = Color( 1, 1, 1, 0.364706 )
+margin_left = 702.0
+margin_top = 431.0
+margin_right = 898.0
+margin_bottom = 469.0
+rect_min_size = Vector2( 196, 38 )
+
+[node name="HoverOverText" type="Label" parent="CanvasLayer/UI/CenterContainer"]
+visible = false
+margin_left = 800.0
+margin_top = 429.0
+margin_right = 800.0
+margin_bottom = 470.0
+
+[node name="Inventory" parent="CanvasLayer/UI" instance=ExtResource( 15 )]
+visible = false
+
+[node name="HandInventory" parent="CanvasLayer/UI" instance=ExtResource( 16 )]
+
+[node name="MouseItem" type="TextureRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 22 )
+
+[connection signal="timeout" from="MinuteTimer" to="." method="_on_MinuteTimer_timeout"]

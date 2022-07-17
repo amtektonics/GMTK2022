@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Common/Scenes/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Common/Scenes/Gameplay/UI/Slot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Common/Res/deafultTheme.tres" type="Theme" id=4]
+
+[node name="Inventory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -1.0
+theme = ExtResource( 4 )
+script = ExtResource( 1 )
+
+[node name="InvenPanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -288.0
+margin_right = 200.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 400, 200 )
+
+[node name="Slot1" parent="InvenPanel" instance=ExtResource( 2 )]
+slot_id = 1
+
+[node name="Slot2" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_left = 96.0
+margin_right = 160.0
+slot_id = 2
+
+[node name="Slot3" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_left = 168.0
+margin_right = 232.0
+slot_id = 3
+
+[node name="Slot4" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_left = 240.0
+margin_right = 304.0
+slot_id = 4
+
+[node name="Slot5" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_left = 312.0
+margin_right = 376.0
+slot_id = 5
+
+[node name="Slot6" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_top = 104.0
+margin_bottom = 168.0
+slot_id = 6
+
+[node name="Slot7" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_left = 96.0
+margin_top = 104.0
+margin_right = 160.0
+margin_bottom = 168.0
+slot_id = 7
+
+[node name="Slot8" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_left = 168.0
+margin_top = 104.0
+margin_right = 232.0
+margin_bottom = 168.0
+slot_id = 8
+
+[node name="Slot9" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_left = 240.0
+margin_top = 104.0
+margin_right = 304.0
+margin_bottom = 168.0
+slot_id = 9
+
+[node name="Slot10" parent="InvenPanel" instance=ExtResource( 2 )]
+margin_left = 312.0
+margin_top = 104.0
+margin_right = 376.0
+margin_bottom = 168.0
+slot_id = 10
+
+[connection signal="gui_input" from="." to="." method="_on_Inventory_gui_input"]

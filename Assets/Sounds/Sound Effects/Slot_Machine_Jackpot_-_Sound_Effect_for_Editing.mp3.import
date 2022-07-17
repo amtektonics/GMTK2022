@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Slot_Machine_Jackpot_-_Sound_Effect_for_Editing.mp3-7b6b52729b590321672856ad3c48dfb8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/Slot_Machine_Jackpot_-_Sound_Effect_for_Editing.mp3"
+dest_files=[ "res://.import/Slot_Machine_Jackpot_-_Sound_Effect_for_Editing.mp3-7b6b52729b590321672856ad3c48dfb8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

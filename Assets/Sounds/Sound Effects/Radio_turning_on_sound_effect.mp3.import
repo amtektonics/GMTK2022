@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Radio_turning_on_sound_effect.mp3-1871402a4985f153b3ce2277cd7442fe.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/Radio_turning_on_sound_effect.mp3"
+dest_files=[ "res://.import/Radio_turning_on_sound_effect.mp3-1871402a4985f153b3ce2277cd7442fe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

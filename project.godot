@@ -8,11 +8,58 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Item",
+"class": "BreadItem",
+"language": "GDScript",
+"path": "res://Common/Res/BreadItem.gd"
+}, {
+"base": "Spatial",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://Common/Scenes/Gameplay/Interactables/Interactable.gd"
+}, {
+"base": "Reference",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Common/Res/Item.gd"
+}, {
+"base": "Item",
+"class": "MysterySeedItem",
+"language": "GDScript",
+"path": "res://Common/Res/MysterySeedItem.gd"
+}, {
+"base": "Item",
+"class": "PotatoItem",
+"language": "GDScript",
+"path": "res://Common/Res/PotatoItem.gd"
+} ]
+_global_script_class_icons={
+"BreadItem": "",
+"Interactable": "",
+"Item": "",
+"MysterySeedItem": "",
+"PotatoItem": ""
+}
+
 [application]
 
 config/name="GMTK2022"
 run/main_scene="res://Common/SceneHandler.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://Common/Singletons/Globals.gd"
+
+[display]
+
+window/size/width=1600
+window/size/height=900
+
+[global]
+
+window=false
 
 [input]
 
