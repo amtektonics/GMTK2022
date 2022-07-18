@@ -1,7 +1,9 @@
 extends Item
 
+class_name BakedPotatoItem
+
 func _init(id):
-	texture = load("res://Assets/Textures/Mystery_Seeds.png")
+	texture = load("res://Assets/Textures/BakedPotato.png")
 	
 	item_id = id
 	
@@ -10,3 +12,5 @@ func _init(id):
 	plantable = true
 	
 	cookable = false
+	
+	food_amount = 10

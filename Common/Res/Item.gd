@@ -14,4 +14,6 @@ var cookable = false
 
 var cooked_id = 0
 
+var food_amount = 0
+
 var edible = false

@@ -12,7 +12,7 @@ onready var game_scene = get_node("/root/SceneHandler/GamePlayScene")
 func minute_tick():
 	if(_growing_item != null):
 		var rand_g = rand_range(-1, 2)
-		growth_percent += 1 + rand_g
+		growth_percent += 3 + rand_g
 		if(growth_percent < 0):
 			growth_percent = 0
 		
@@ -27,8 +27,9 @@ func minute_tick():
 func clicked():
 	if(planted):
 		if(growth_percent >= 100):
-			game_scene.hand_inventory.add_item(_growing_item, int(rand_range(1, 5)))
+			game_scene.hand_inventory.add_item(_growing_item, int(rand_range(2, 5)))
 			set_growing_item(null)
+			growth_percent = 0
 	else:
 		if(game_scene.get_mouse_item() != null):
 			if(game_scene.get_mouse_item().plantable):

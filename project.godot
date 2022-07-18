@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Item",
+"class": "BakedPotatoItem",
+"language": "GDScript",
+"path": "res://Common/Res/BakedPotatoItem.gd"
+}, {
+"base": "Item",
 "class": "BreadItem",
 "language": "GDScript",
 "path": "res://Common/Res/BreadItem.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://Common/Res/PotatoItem.gd"
 } ]
 _global_script_class_icons={
+"BakedPotatoItem": "",
 "BreadItem": "",
 "Interactable": "",
 "Item": "",
@@ -44,7 +50,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GMTK2022"
+config/name="Evil Guest"
 run/main_scene="res://Common/SceneHandler.tscn"
 config/icon="res://icon.png"
 

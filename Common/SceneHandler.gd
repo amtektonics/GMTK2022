@@ -8,7 +8,7 @@ onready var _main_menu = load("res://Common/Scenes/MainMenuScene.tscn")
 onready var _game_play = load("res://Common/Scenes/GamePlayScene.tscn")
 
 func _ready():
-	load_game_play()
+	load_main_menu()
 
 
 func load_main_menu():

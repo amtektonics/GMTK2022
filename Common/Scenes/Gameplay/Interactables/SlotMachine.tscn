@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Materials/SlotWheelMat.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/SlotMachine.tres" type="Material" id=2]
 [ext_resource path="res://Common/Scenes/Gameplay/Interactables/SlotMachine.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sounds/Sound Effects/SlotMachine_Sound.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sounds/Sound Effects/Jackpot.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sounds/Sound Effects/wawa.wav" type="AudioStream" id=6]
 
 [sub_resource type="ArrayMesh" id=7]
 resource_name = "SlotMachine_Cube"
@@ -98,7 +100,7 @@ extents = Vector3( 0.819955, 1.39388, 1 )
 [node name="SlotMachine" type="Spatial"]
 script = ExtResource( 3 )
 interactable_name = "SlotMachine"
-mouse_over_text = "Pull?"
+mouse_over_text = "Spin"
 
 [node name="Body" type="MeshInstance" parent="."]
 mesh = SubResource( 7 )
@@ -110,7 +112,7 @@ mesh = SubResource( 9 )
 material/0 = ExtResource( 1 )
 
 [node name="Wheel1" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.140234, 0.342186, 0.430488 )
+transform = Transform( 1, 0, 0, 0, -0.5, -0.866025, 0, 0.866025, -0.5, -0.140234, 0.342186, 0.430488 )
 mesh = SubResource( 10 )
 material/0 = ExtResource( 1 )
 
@@ -133,9 +135,17 @@ wait_time = 2.0
 
 [node name="CoinOpAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 4 )
-unit_db = 0.088
+unit_db = -10.0
 unit_size = 10.4
 attenuation_filter_cutoff_hz = 20500.0
+
+[node name="Jackpot" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+unit_db = 5.0
+
+[node name="wawa" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 6 )
+unit_db = 10.0
 
 [connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]
 [connection signal="mouse_entered" from="Area" to="." method="_on_Area_mouse_entered"]

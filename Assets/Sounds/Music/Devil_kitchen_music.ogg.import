@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Devil_kitchen_music.ogg-8d822fb60798baf3714c7808ec4e49ab.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Devil_kitchen_music.ogg"
+dest_files=[ "res://.import/Devil_kitchen_music.ogg-8d822fb60798baf3714c7808ec4e49ab.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

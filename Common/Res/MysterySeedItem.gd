@@ -14,3 +14,7 @@ func _init(id):
 	cookable = true
 	
 	cooked_id = 3
+	
+	edible = true
+	
+	food_amount = 2

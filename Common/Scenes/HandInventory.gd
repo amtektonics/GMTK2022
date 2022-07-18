@@ -45,17 +45,18 @@ func _slot_right_clicked(id):
 
 func add_item(item, amount):
 	var found_slot = false
-	for s in _slots:
-		var i = _slots[s].get_contents()
-		if(i != null):
-			if(i.item_id == item.item_id):
-				var current_amount = _slots[s].get_amount()
-				var new_amount = current_amount + amount
-				_slots[s].update_slot(item, new_amount)
-				return
-	
-	if(!found_slot):
+	if(amount > 0):
 		for s in _slots:
-			if(_slots[s].get_contents() == null):
-				_slots[s].update_slot(item, amount)
-				return
+			var i = _slots[s].get_contents()
+			if(i != null):
+				if(i.item_id == item.item_id):
+					var current_amount = _slots[s].get_amount()
+					var new_amount = current_amount + amount
+					_slots[s].update_slot(item, new_amount)
+					return
+		
+		if(!found_slot):
+			for s in _slots:
+				if(_slots[s].get_contents() == null):
+					_slots[s].update_slot(item, amount)
+					return

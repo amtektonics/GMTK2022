@@ -8,3 +8,4 @@ func _init(id):
 	item_name = "Potato"
 	plantable = true
 	cookable = true
+	cooked_id = 4
